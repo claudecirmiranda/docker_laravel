@@ -4,20 +4,13 @@ Este projeto é um ambiente Docker para execução de uma API Laravel de rastrea
 
 ## 🗂 Estrutura do Projeto
 
+```bash
 docker_laravel/
 ├── Dockerfile
-└── order-tracking/
-├── app/
-├── bootstrap/
-├── config/
-├── database/
-├── public/
-└── ...
-
-yaml
-Copiar
-Editar
-
+└── order-tracking (projeto Laravel)/
+├── README.md
+└── pos_subida.txt
+```
 ---
 
 ## 🚀 Passo a passo para rodar o projeto
@@ -27,30 +20,35 @@ Editar
 ```bash
 git clone https://github.com/claudecirmiranda/docker_laravel.git
 cd docker_laravel
+```
+
 2. Compilar a imagem Docker
-bash
-Copiar
-Editar
+
+```
 docker build -f Dockerfile -t php-laravel:8.3 .
+```
+
 3. Entrar na pasta do projeto Laravel
-bash
-Copiar
-Editar
+
+```
 cd order-tracking
+```
+
 4. Subir os containers
-bash
-Copiar
-Editar
+
+```
 docker-compose up -d
+```
+
 🐳 Acessar o container Laravel
-bash
-Copiar
-Editar
+
+```
 docker exec -it laravel-app bash
+```
+
 5. Executar os comandos de setup da aplicação
-bash
-Copiar
-Editar
+
+```
 composer install
 php artisan key:generate
 php artisan migrate
@@ -59,11 +57,13 @@ php artisan cache:clear
 php artisan view:clear
 chmod -R 775 storage bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache
+```
+
 ✅ Testes da API
+
 ➕ Criar novo pedido
-bash
-Copiar
-Editar
+
+```
 curl --location 'http://localhost:8080/order-tracking/api/order' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: ••••••' \
@@ -80,10 +80,11 @@ curl --location 'http://localhost:8080/order-tracking/api/order' \
         "state": "PB"
     }
 }'
+```
+
 🚚 Atualizar tracking do pedido
-bash
-Copiar
-Editar
+
+```
 curl --location 'http://localhost:8080/order-tracking/api/order/tracking' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -99,18 +100,26 @@ curl --location 'http://localhost:8080/order-tracking/api/order/tracking' \
         }
     ]
 }'
+```
+
 🌐 Testes via Navegador
+
 🔐 Gerar hash
+
 Acesse no navegador:
 
-bash
-Copiar
-Editar
+```
 http://localhost:8080/order-tracking/123/CPR
+```
+
 🔍 Consultar tracking com hash
 Copie o hash gerado e acesse:
 
-bash
-Copiar
-Editar
+```
 http://localhost:8080/order-tracking/aWQ9MTIzJmNoPUNQUiZoYXNoPTQ3NTM0ZmU3NjQ1MDhhZjI1ZjViZDRmZDUwMmMwMGFk
+```
+
+📄 Licença
+----------
+
+Este projeto está sob a licença MIT.
