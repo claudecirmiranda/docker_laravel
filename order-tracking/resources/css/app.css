@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.table-auto th {
+    font-size: .875rem;
+    text-align: start;
+}
+
+.table-auto .border-none {
+    border: none;
+}
+
+.table-auto td, .table-auto th {
+    padding: .875rem .5rem;
+    border-bottom: 1px solid #D5D5D5;
+}
+
+.table-one-tracking {
+    padding: .25rem 0;
+}
+
+.table-one-tracking>div {
+    display: grid;
+    padding: 0 .5rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    border-bottom: 1px solid #D5D5D5;
+    font-size: .875rem;
+    line-height: 1.1875rem;
+}
+
+.table-one-tracking>div>div {
+    padding: .5rem;
+}
+
+.table-one-tracking>div>div:first-child {
+    font-weight: 600;
+}
+
+.table-one-tracking>div>div:last-child {
+    padding-left: 0;
+}
+
+.table-one-tracking>div:last-child {
+    border-bottom: none;
+}

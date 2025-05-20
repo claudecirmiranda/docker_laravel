@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: 'Nagem - Open Tracking'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths: []
+tags: []
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'Você pode gerar o token atráves do sistema de autenticação interno da Nagem.'
+security:
+  -
+    default: []

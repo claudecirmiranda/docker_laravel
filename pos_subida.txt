@@ -1,0 +1,11 @@
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
+chmod -R 775 storage bootstrap/cache
+chown -R www-data:www-data storage bootstrap/cache
+
+
+tail -f storage/logs/laravel.log
