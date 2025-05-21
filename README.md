@@ -66,7 +66,6 @@ chown -R www-data:www-data storage bootstrap/cache
 ```
 curl --location 'http://localhost:8080/order-tracking/api/order' \
 --header 'Content-Type: application/json' \
---header 'Authorization: ••••••' \
 --data '{
     "order_id": "123",
     "channel": "CPR",
