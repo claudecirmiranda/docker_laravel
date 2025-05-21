@@ -20,7 +20,6 @@ Thumbs.db
 !bootstrap/cache/.gitignore
 
 /storage/app/*
-/storage/framework/*
 /storage/logs/*
 !storage/app/.gitignore
 !storage/framework/.gitignore
