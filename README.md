@@ -49,14 +49,35 @@ docker exec -it laravel-app bash
 5. Executar os comandos de setup da aplicação
 
 ```
+1. Limpa o terminal (opcional)
+clear
+
+2. Instala dependências do Composer
 composer install
+
+3. Gera a chave da aplicação
 php artisan key:generate
-php artisan migrate
+
+4. Cria pastas necessárias para armazenamento de views (se não existir)
+mkdir -p storage/framework/views
+
+5. Ajusta permissões nas pastas de armazenamento
+chmod -R 775 storage bootstrap/cache
+
+6. Ajusta o proprietário das pastas (substitua 'www-data' pelo usuário do seu servidor web, se necessário)
+sudo chown -R www-data:www-data storage bootstrap/cache
+
+7. Limpa caches e configurações para garantir um ambiente limpo
 php artisan config:clear
 php artisan cache:clear
 php artisan view:clear
-chmod -R 775 storage bootstrap/cache
-chown -R www-data:www-data storage bootstrap/cache
+
+8. Executa as migrções (certifique-se de que o banco está configurado corretamente)
+php artisan migrate
+
+9. (Opcional) verificar o usuário do servidor web
+ps aux | egrep '(apache|nginx)'
+
 ```
 
 ✅ Testes da API
