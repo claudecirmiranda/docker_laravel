@@ -3,7 +3,6 @@
 /node_modules/
 /public/storage
 /storage/*.key
-.env
 .phpunit.result.cache
 Homestead.yaml
 Homestead.json
@@ -36,8 +35,6 @@ docker-compose.override.yml
 .tailwind*
 
 # Composer & NPM
-composer.lock
-package-lock.json
 yarn.lock
 
 # Sistema operacional
